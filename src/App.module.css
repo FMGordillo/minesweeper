@@ -1,0 +1,38 @@
+.window {
+  background-color: var(--color-gray);
+  min-width: 230px;
+  padding: var(--main-spacing);
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+}
+
+.title {
+  margin: 0;
+  padding: .2rem 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+}
+
+.pointsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--main-spacing);
+}
+
+.points {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding-left: .2rem;
+  font-size: 2.5rem
+}
+
+.boardContainer {
+  display: flex;
+  flex-direction: column;
+}
+
