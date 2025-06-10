@@ -46,25 +46,18 @@ const TileImage = (props: {
   />
 );
 
+
 /**
  * A mine tile.
  */
-Tile.Mine = () => <TileImage name="mine" />;
+Tile.Mine = () => (
+  <img src="/tileset/mine.png" alt="Mine" width={26} height={26} />
+);
 
 /**
  * A flag tile.
  */
 Tile.Flag = () => <TileImage name="flag" />;
-
-/**
- * A detected mine tile.
- */
-Tile.DetectedMine = () => <TileImage name="detected-mine" />;
-
-/**
- * An exploded mine tile.
- */
-Tile.ExplodedMine = () => <TileImage name="exploded-mine" />;
 
 /**
  * A numeric value tile.

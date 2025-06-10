@@ -12,9 +12,26 @@ export function _generateMinesweeperMatrix(
   while (placed < mines) {
     const x = Math.floor(Math.random() * width);
     const y = Math.floor(Math.random() * height);
-    if (matrix[y][x] === 0) {
-      matrix[y][x] = 1; // 1 means mine
+
+    if (matrix[y][x] !== -1) {
+      matrix[y][x] = -1; // -1 means mine
       placed++;
+      // Increment surrounding tile mine "count"
+      for (const i of [-1, 0, 1]) {
+        for (const j of [-1, 0, 1]) {
+          const newX = x + j;
+          const newY = y + i;
+          if (
+            newX >= 0 &&
+            newX < width &&
+            newY >= 0 &&
+            newY < height &&
+            matrix[newY][newX] !== -1
+          ) {
+            matrix[newY][newX]++;
+          }
+        }
+      }
     }
   }
   return matrix;
